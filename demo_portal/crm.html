@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komodo • CRM Pipeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif} html{background:#111827}</style>
+  </head>
+  <body class="bg-gray-900 text-gray-400 min-h-screen">
+    <div class="md:hidden fixed inset-x-0 top-0 z-50 bg-gray-900 border-b border-gray-700 h-14 flex items-center justify-between px-4">
+      <div class="flex items-center gap-2">
+        <button id="openSidebar" class="p-2 rounded-md hover:bg-gray-800" aria-label="Open Menu">
+          <svg class="h-6 w-6 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <span class="text-white font-bold">Komodo</span>
+      </div>
+      
+    </div>
+    <div id="sidebarOverlay" class="overlay md:hidden"></div>
+    <aside id="sidebar" class="sidebar fixed inset-y-0 left-0 z-40 hidden md:flex md:flex-col bg-gray-900 border-r border-gray-700">
+      <div class="flex items-center gap-2 px-4 h-16 border-b border-gray-700">
+        <svg width="26" height="26" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="36" height="36" rx="9" fill="#10B981" opacity="0.2"/>
+          <path d="M14 30 L24 12 L34 30" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 28 H31" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="text-white font-extrabold text-lg">Komodo</span>
+      </div>
+      <nav class="flex-1 px-3 py-4 space-y-1">
+        <a href="index.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="messages.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 01-4 4H8l-5 5V5a4 4 0 014-4h10a4 4 0 014 4v10z"/></svg>
+          <span>Messages</span>
+        </a>
+        <a href="crm.html" class="nav-item active flex items-center gap-3 px-3 py-2 rounded-md hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h7v10H3zM14 7h7v5h-7zM14 14h7v3h-7z"/></svg>
+          <span>CRM Pipeline</span>
+        </a>
+        <a href="transactions.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>Transactions</span>
+        </a>
+        <a href="documents.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v6h6"/></svg>
+          <span>Documents</span>
+        </a>
+        <a href="content.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
+          <span>Content AI</span>
+        </a>
+      </nav>
+      <div class="mt-auto px-4 py-4 border-t border-gray-700">
+        <div class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">JA</div>
+          <div>
+            <div class="text-white font-medium leading-tight">Jessica Albright</div>
+            <div class="text-gray-400 text-xs">REALTOR</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="md:pl-[260px] pt-14 md:pt-0">
+      <header class="hidden md:flex items-center justify-between h-16 px-6 border-b border-gray-700">
+        <h1 class="text-white font-semibold">Lead CRM Pipeline</h1>
+        <div></div>
+      </header>
+      <main class="p-4 sm:p-6 lg:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <!-- Column: New Lead -->
+          <div class="kanban-col p-3">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-white font-semibold">New Lead</h2>
+              <span class="text-xs text-gray-400">4</span>
+            </div>
+            <div class="space-y-3">
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Sarah Jenkins</div>
+                <div class="text-xs text-gray-400">Instagram • New inquiry on 123 Maple</div>
+              </div>
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Jason Lee</div>
+                <div class="text-xs text-gray-400">Zillow • Requested showing for 45 Oak Dr</div>
+              </div>
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Megan Ortiz</div>
+                <div class="text-xs text-gray-400">Instagram • Relocation lead</div>
+              </div>
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Priya Shah</div>
+                <div class="text-xs text-gray-400">Referral • First-time buyer</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: Contacted -->
+          <div class="kanban-col p-3">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-white font-semibold">Contacted</h2>
+              <span class="text-xs text-gray-400">2</span>
+            </div>
+            <div class="space-y-3">
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Daniel Kim</div>
+                <div class="text-xs text-gray-400">Zillow • Pre‑approved; townhome</div>
+              </div>
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Victor Chen</div>
+                <div class="text-xs text-gray-400">Zillow • Cash buyer</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: Showing Scheduled -->
+          <div class="kanban-col p-3">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-white font-semibold">Showing Scheduled</h2>
+              <span class="text-xs text-gray-400">2</span>
+            </div>
+            <div class="space-y-3">
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Omar Reyes</div>
+                <div class="text-xs text-gray-400">Open House • Saturday 1:30 PM</div>
+              </div>
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Tasha Nguyen</div>
+                <div class="text-xs text-gray-400">Instagram • Tour set for Friday</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column: Nurturing -->
+          <div class="kanban-col p-3">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-white font-semibold">Nurturing</h2>
+              <span class="text-xs text-gray-400">2</span>
+            </div>
+            <div class="space-y-3">
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Carla Morales</div>
+                <div class="text-xs text-gray-400">Website • Wants next‑month start</div>
+              </div>
+              <div class="card p-3 card-hover">
+                <div class="text-white font-medium">Evan Brooks</div>
+                <div class="text-xs text-gray-400">Open House • Send comps weekly</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById('openSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      if (openBtn) openBtn.addEventListener('click', ()=>{ sidebar.classList.remove('hidden'); overlay.classList.add('show'); });
+      if (overlay) overlay.addEventListener('click', ()=>{ sidebar.classList.add('hidden'); overlay.classList.remove('show'); });
+    </script>
+  </body>
+  </html>

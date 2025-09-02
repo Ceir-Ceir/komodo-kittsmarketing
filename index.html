@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komodo — The OS for Top-Producing Realtors</title>
+    <meta name="description" content="Komodo is a custom-built, AI-powered operating system for top-producing real estate agents. Replace your SaaS stack and run your business on one OS." />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+      /* Subtle emerald glow for hero mockup */
+      .emerald-glow { box-shadow: 0 0 80px rgba(16, 185, 129, 0.3); }
+      /* Smooth accordion arrow reset */
+      details > summary::-webkit-details-marker { display: none; }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-400">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-gray-900/70 backdrop-blur-sm border-b border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-3 group">
+            <!-- Abstract emerald icon -->
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10B981"/>
+                  <stop offset="1" stop-color="#34D399"/>
+                </linearGradient>
+              </defs>
+              <rect x="6" y="6" width="36" height="36" rx="9" fill="url(#g)" opacity="0.2"/>
+              <path d="M14 30 L24 12 L34 30" stroke="#10B981" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17 28 H31" stroke="#10B981" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+            <span class="text-white font-extrabold text-lg tracking-tight">Komodo</span>
+          </a>
+
+          <!-- Desktop nav -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#offer" class="hover:text-white transition">The Offer</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
+          </nav>
+
+          <!-- CTA + Mobile -->
+          <div class="flex items-center gap-3">
+            <a href="https://calendly.com/ejg-kittsmarketing/30min" target="_blank" rel="noopener" class="hidden md:inline-flex items-center justify-center rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition">Book a Demo</a>
+            <button id="mobile-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+              <span class="sr-only">Open menu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-gray-700 bg-gray-900/90 backdrop-blur-sm">
+        <div class="px-4 py-3 space-y-2">
+          <a href="#features" class="block px-3 py-2 rounded hover:bg-gray-800 hover:text-white">Features</a>
+          <a href="#offer" class="block px-3 py-2 rounded hover:bg-gray-800 hover:text-white">The Offer</a>
+          <a href="#faq" class="block px-3 py-2 rounded hover:bg-gray-800 hover:text-white">FAQ</a>
+          <a href="https://calendly.com/ejg-kittsmarketing/30min" target="_blank" rel="noopener" class="block text-center rounded-md bg-emerald-500 px-4 py-2 font-semibold text-gray-900 hover:bg-emerald-400">Book a Demo</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24"> <!-- spacing for sticky header -->
+      <!-- Hero -->
+      <section class="relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div class="lg:col-span-6">
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                Stop Juggling 5 Apps.<br>
+                <span class="text-emerald-400">Run Your Entire Real Estate Business on One OS.</span>
+              </h1>
+              <p class="mt-5 text-base sm:text-lg text-gray-300 max-w-2xl">
+                Komodo is a custom-built, AI-powered system designed for top-producing realtors in hot markets. We handle the tech, so you can focus on what you do best: closing deals.
+              </p>
+              <div class="mt-8 flex flex-wrap items-center gap-4">
+                <a href="#offer" class="inline-flex items-center justify-center rounded-md bg-emerald-500 px-6 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition">Become a Founding Partner</a>
+                <a href="https://calendly.com/ejg-kittsmarketing/30min" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-md border border-emerald-500 px-6 py-3 text-base font-semibold text-emerald-400 hover:bg-emerald-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition">Book a Demo</a>
+              </div>
+            </div>
+            <div class="lg:col-span-6">
+              <div class="relative rounded-xl overflow-hidden border border-gray-700 bg-gray-800 emerald-glow">
+                <img src="assets/komodo_dash.png" alt="Komodo dashboard mockup" class="w-full h-auto object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section class="mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Tired of the SaaS juggle?</h2>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <div class="rounded-xl border border-gray-700 bg-gray-800 p-6">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-emerald-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 3v18M3 12h18" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <h3 class="text-white font-semibold">Leads Slip Through the Cracks</h3>
+              </div>
+              <p class="mt-3 text-sm text-gray-300">Stop losing opportunities to inbox chaos and app switching. Komodo captures, routes, and responds instantly.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="rounded-xl border border-gray-700 bg-gray-800 p-6">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-emerald-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="14" rx="2"/>
+                    <path d="M7 21h10"/>
+                  </svg>
+                </span>
+                <h3 class="text-white font-semibold">Admin Work Kills Your Day</h3>
+              </div>
+              <p class="mt-3 text-sm text-gray-300">Automate repetitive follow-ups, task creation, and reporting so you can spend time with clients.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="rounded-xl border border-gray-700 bg-gray-800 p-6">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-emerald-500/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 7h16M7 4v6m10-6v6M4 17h16"/>
+                  </svg>
+                </span>
+                <h3 class="text-white font-semibold">Disconnected Tools Cause Chaos</h3>
+              </div>
+              <p class="mt-3 text-sm text-gray-300">One OS. One source of truth. Everything works together, end-to-end.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Your Business, Automated.</h2>
+
+          <!-- Feature 1 -->
+          <div class="mt-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div>
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-emerald-500/10">
+                  <!-- Lightning bolt icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+                  </svg>
+                </span>
+                <h3 class="text-white font-semibold text-lg">Automated Lead Capture & Instant Response</h3>
+              </div>
+              <p class="mt-3 text-gray-300">Capture leads from every source, deduplicate, and auto-route. Instant SMS/email follow-ups with smart personalization.</p>
+            </div>
+            <div>
+              <div class="rounded-xl border border-gray-700 bg-gray-800 overflow-hidden">
+                <img src="assets/komodo_crm.png" alt="Komodo CRM screenshot" class="w-full h-auto object-cover" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2 (reversed) -->
+          <div class="mt-14 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div class="order-2 md:order-1">
+              <div class="rounded-xl border border-gray-700 bg-gray-800 overflow-hidden">
+                <img src="assets/komodo_pipeline.png" alt="Komodo transaction pipeline screenshot" class="w-full h-auto object-cover" />
+              </div>
+            </div>
+            <div class="order-1 md:order-2">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-emerald-500/10">
+                  <!-- Document icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/>
+                    <path d="M14 3v6h6"/>
+                  </svg>
+                </span>
+                <h3 class="text-white font-semibold text-lg">Visual Transaction Pipeline</h3>
+              </div>
+              <p class="mt-3 text-gray-300">A Kanban pipeline built for real estate. Drag-and-drop deals, tasks, docs, and deadlines in one place.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="mt-14 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div>
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-emerald-500/10">
+                  <!-- Lightbulb icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18h6m-5 3h4M8 10a4 4 0 118 0c0 2-2 3-2 5H10c0-2-2-3-2-5z" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <h3 class="text-white font-semibold text-lg">Komodo AI Assistant</h3>
+              </div>
+              <p class="mt-3 text-gray-300">Ask natural-language questions about your pipeline, leads, and marketing. Komodo’s AI answers with context and takes action.</p>
+            </div>
+            <div>
+              <!-- Terminal/Chat styled block -->
+              <div class="rounded-xl border border-gray-700 bg-gray-800 overflow-hidden">
+                <div class="flex items-center gap-1 px-3 py-2 border-b border-gray-700 bg-gray-900/60">
+                  <span class="h-2.5 w-2.5 rounded-full bg-red-500/70"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-yellow-500/70"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-green-500/70"></span>
+                  <span class="ml-3 text-xs text-gray-400">Komodo Assistant</span>
+                </div>
+                <div class="p-4 sm:p-6 text-sm leading-6">
+                  <pre class="whitespace-pre-wrap font-mono text-gray-300">&gt; Who was my latest lead?
+• New lead: Sarah Thompson (302-555-0199) from Zillow.
+• Assigned to: Buyer pipeline → New Inquiry.
+• Auto-response sent: "Thanks Sarah — when are you free for a 10‑min call?"
+
+&gt; Move her to Qualified and schedule a call tomorrow at 10am.
+✓ Stage updated: Qualified.
+✓ Calendared: 10:00 AM tomorrow, Google Meet link sent.
+
+&gt; Draft a follow-up text if she doesn’t reply in 2 hours.
+✓ Follow-up scheduled: Smart SMS with context and property links.</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Offer -->
+      <section id="offer" class="mt-24 bg-gray-800/60 border-y border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <p class="text-emerald-400 font-semibold tracking-wide">The Founding Partner Offer</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-white max-w-3xl">Become one of the first 5 agents to get a custom-built Komodo OS.</h2>
+
+          <div class="mt-10 grid place-items-center">
+            <div class="w-full max-w-2xl rounded-2xl border-2 border-emerald-500 bg-gray-900 p-6 sm:p-10 shadow-xl">
+              <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+                <div>
+                  <h3 class="text-white font-semibold text-xl">Founding Partner</h3>
+                  <p class="mt-2 text-gray-300">A bespoke, managed operating system tailored to your team’s workflow, data, and market.</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-white text-3xl font-extrabold">$5,000</div>
+                  <div class="text-gray-300 -mt-1">One-Time Setup</div>
+                  <div class="mt-2 text-white text-xl font-bold">$500<span class="text-gray-300 text-base font-medium"> / month</span></div>
+                  <div class="text-gray-400 text-xs">6-month minimum retainer</div>
+                </div>
+              </div>
+              <ul class="mt-6 space-y-2 text-sm text-gray-300 list-disc list-inside">
+                <li>Custom implementation: CRM, pipeline, automations, dashboards</li>
+                <li>Lead source integrations and data migration</li>
+                <li>Done-for-you onboarding, training, and white-glove support</li>
+                <li>Ongoing optimization of automations and AI prompts</li>
+              </ul>
+              <div class="mt-8">
+                <a href="#demo-form" class="block w-full text-center rounded-lg bg-emerald-500 px-6 py-3 text-base font-semibold text-gray-900 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition">Claim Your Spot (Only 5 Available)</a>
+              </div>
+              <p class="mt-3 text-xs text-gray-400">Retainer covers hosting, monitoring, backups, proactive support, and incremental improvements.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Frequently Asked Questions</h2>
+          <div class="mt-8 space-y-4">
+            <!-- Q1 -->
+            <details class="group rounded-xl border border-gray-700 bg-gray-800 p-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span class="text-white font-semibold">How is Komodo different from a typical CRM?</span>
+                <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+              </summary>
+              <div class="mt-3 text-sm text-gray-300">
+                Komodo is an operating system, not just a database of contacts. It replaces your fragmented tools with a managed, end-to-end stack: lead capture and instant reply, visual transaction pipeline, automated tasks, marketing workflows, dashboards, and an AI assistant that understands your business and can take action.
+              </div>
+            </details>
+            <!-- Q2 -->
+            <details class="group rounded-xl border border-gray-700 bg-gray-800 p-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span class="text-white font-semibold">What does the monthly retainer cover?</span>
+                <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+              </summary>
+              <div class="mt-3 text-sm text-gray-300">
+                Hosting, uptime monitoring, backups, security updates, proactive support, integration maintenance, and continuous tuning of automations and AI prompts. It also includes minor enhancements as your process evolves.
+              </div>
+            </details>
+            <!-- Q3 -->
+            <details class="group rounded-xl border border-gray-700 bg-gray-800 p-4">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span class="text-white font-semibold">Is Komodo suitable for non‑tech‑savvy agents?</span>
+                <svg class="h-5 w-5 text-gray-400 transition group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+              </summary>
+              <div class="mt-3 text-sm text-gray-300">
+                Yes. We deliver a done‑for‑you build with white‑glove onboarding and training. The interface is clean and opinionated, and our team actively supports you so you can focus on clients—not configuration.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Optional anchor target for main CTA -->
+      <div id="demo-form" class="mt-16"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 border-t border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-400 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p>© 2025 Komodo. Built for ambitious realtors.</p>
+        <div class="flex items-center gap-4">
+          <a href="#features" class="hover:text-white">Features</a>
+          <a href="#offer" class="hover:text-white">The Offer</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Minimal JS: mobile menu + reduce motion fallback -->
+    <script>
+      const toggle = document.getElementById('mobile-toggle');
+      const menu = document.getElementById('mobile-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+      // Respect reduced motion
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mq.matches) {
+        document.documentElement.style.scrollBehavior = 'auto';
+      }
+    </script>
+  </body>
+  </html>

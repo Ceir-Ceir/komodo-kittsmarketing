@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komodo • Messages & Lead Inbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif} html{background:#111827}</style>
+  </head>
+  <body class="bg-gray-900 text-gray-400 min-h-screen">
+    <div class="md:hidden fixed inset-x-0 top-0 z-50 bg-gray-900 border-b border-gray-700 h-14 flex items-center justify-between px-4">
+      <div class="flex items-center gap-2">
+        <button id="openSidebar" class="p-2 rounded-md hover:bg-gray-800" aria-label="Open Menu">
+          <svg class="h-6 w-6 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <span class="text-white font-bold">Komodo</span>
+      </div>
+      
+    </div>
+    <div id="sidebarOverlay" class="overlay md:hidden"></div>
+    <aside id="sidebar" class="sidebar fixed inset-y-0 left-0 z-40 hidden md:flex md:flex-col bg-gray-900 border-r border-gray-700">
+      <div class="flex items-center gap-2 px-4 h-16 border-b border-gray-700">
+        <svg width="26" height="26" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="36" height="36" rx="9" fill="#10B981" opacity="0.2"/>
+          <path d="M14 30 L24 12 L34 30" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 28 H31" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="text-white font-extrabold text-lg">Komodo</span>
+      </div>
+      <nav class="flex-1 px-3 py-4 space-y-1">
+        <a href="index.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="messages.html" class="nav-item active flex items-center gap-3 px-3 py-2 rounded-md hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 01-4 4H8l-5 5V5a4 4 0 014-4h10a4 4 0 014 4v10z"/></svg>
+          <span>Messages</span>
+        </a>
+        <a href="crm.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h7v10H3zM14 7h7v5h-7zM14 14h7v3h-7z"/></svg>
+          <span>CRM Pipeline</span>
+        </a>
+        <a href="transactions.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>Transactions</span>
+        </a>
+        <a href="documents.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v6h6"/></svg>
+          <span>Documents</span>
+        </a>
+        <a href="content.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
+          <span>Content AI</span>
+        </a>
+      </nav>
+      <div class="mt-auto px-4 py-4 border-t border-gray-700">
+        <div class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">JA</div>
+          <div>
+            <div class="text-white font-medium leading-tight">Jessica Albright</div>
+            <div class="text-gray-400 text-xs">REALTOR</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="md:pl-[260px] pt-14 md:pt-0">
+      <header class="hidden md:flex items-center justify-between h-16 px-6 border-b border-gray-700">
+        <h1 class="text-white font-semibold">Messages</h1>
+        <div class="flex items-center gap-2">
+          <button class="btn btn-outline px-3 py-1.5 text-sm" id="filterAll">All</button>
+          <button class="btn btn-outline px-3 py-1.5 text-sm" id="filterIG">Instagram</button>
+          <button class="btn btn-outline px-3 py-1.5 text-sm" id="filterEmail">Email</button>
+        </div>
+      </header>
+      <main class="p-4 sm:p-6 lg:p-8 space-y-6">
+        <!-- AI Summary (Today) -->
+        <section class="card p-5">
+          <div class="flex items-center justify-between">
+            <h2 class="text-white font-semibold">Today’s Message Summary</h2>
+            <span class="text-xs text-gray-400">AI-generated preview</span>
+          </div>
+          <div class="mt-3 grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="rounded-lg border border-gray-700 bg-gray-800 p-4">
+              <div class="text-xs text-gray-400">Total Messages</div>
+              <div class="text-white text-2xl font-bold">24</div>
+            </div>
+            <div class="rounded-lg border border-gray-700 bg-gray-800 p-4">
+              <div class="text-xs text-gray-400">Instagram DMs</div>
+              <div class="text-white text-2xl font-bold">14</div>
+            </div>
+            <div class="rounded-lg border border-gray-700 bg-gray-800 p-4">
+              <div class="text-xs text-gray-400">Emails</div>
+              <div class="text-white text-2xl font-bold">10</div>
+            </div>
+            <div class="rounded-lg border border-gray-700 bg-gray-800 p-4">
+              <div class="text-xs text-gray-400">Unanswered</div>
+              <div class="text-amber-400 text-2xl font-bold">3</div>
+            </div>
+          </div>
+          <div class="mt-4 text-sm text-gray-300 leading-6">
+            Highlights: 2 hot buyer inquiries from Instagram about 123 Maple St; 1 lender follow-up email for the Lee transaction; 3 messages need responses within the next hour.
+          </div>
+        </section>
+
+        <!-- Controls -->
+        <section class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+          <div class="flex items-center gap-2">
+            <button class="btn btn-outline px-3 py-1.5 text-sm" data-filter="all">All</button>
+            <button class="btn btn-outline px-3 py-1.5 text-sm" data-filter="instagram">Instagram</button>
+            <button class="btn btn-outline px-3 py-1.5 text-sm" data-filter="email">Email</button>
+          </div>
+          <div class="flex items-center gap-2">
+            <input id="search" class="bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-sm text-white placeholder-gray-500 w-full sm:w-64" placeholder="Search by name or subject" />
+          </div>
+        </section>
+
+        <!-- Table -->
+        <section class="card p-0 overflow-hidden">
+          <div class="table-wrap">
+            <table class="table text-sm">
+              <thead>
+                <tr>
+                  <th class="min-w-[100px]">Time</th>
+                  <th class="min-w-[120px]">Source</th>
+                  <th class="min-w-[160px]">From</th>
+                  <th class="min-w-[320px]">Subject / Preview</th>
+                  <th class="min-w-[120px]">Status</th>
+                  <th class="min-w-[120px]">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="messageRows">
+                <!-- IG Rows -->
+                <tr data-source="instagram">
+                  <td class="text-gray-300">9:12 AM</td>
+                  <td><span class="badge badge-ig"><span class="status-dot status-unread"></span> Instagram</span></td>
+                  <td class="text-white">Sarah Jenkins</td>
+                  <td>“Is 123 Maple Street available? Can I tour Saturday?”</td>
+                  <td><span class="text-emerald-400">Unread</span></td>
+                  <td><a href="#" class="text-emerald-400 hover:underline">Respond</a></td>
+                </tr>
+                <tr data-source="instagram">
+                  <td class="text-gray-300">10:05 AM</td>
+                  <td><span class="badge badge-ig"><span class="status-dot status-read"></span> Instagram</span></td>
+                  <td class="text-white">Megan Ortiz</td>
+                  <td>“Relocating to Wilmington, looking for 3BR near parks.”</td>
+                  <td><span class="text-gray-400">Read</span></td>
+                  <td><a href="#" class="text-emerald-400 hover:underline">Open</a></td>
+                </tr>
+                <tr data-source="instagram">
+                  <td class="text-gray-300">1:22 PM</td>
+                  <td><span class="badge badge-ig"><span class="status-dot status-read"></span> Instagram</span></td>
+                  <td class="text-white">Daniel Kim</td>
+                  <td>“Pre‑approved. Do you have townhomes in Newark?”</td>
+                  <td><span class="text-gray-400">Read</span></td>
+                  <td><a href="#" class="text-emerald-400 hover:underline">Open</a></td>
+                </tr>
+
+                <!-- Email Rows -->
+                <tr data-source="email">
+                  <td class="text-gray-300">8:47 AM</td>
+                  <td><span class="badge badge-email"><span class="status-dot status-read"></span> Email</span></td>
+                  <td class="text-white">FirstBank Lender</td>
+                  <td>Appraisal date confirmation — 45 Oak Dr (Lee)</td>
+                  <td><span class="text-gray-400">Read</span></td>
+                  <td><a href="#" class="text-emerald-400 hover:underline">Open</a></td>
+                </tr>
+                <tr data-source="email">
+                  <td class="text-gray-300">11:03 AM</td>
+                  <td><span class="badge badge-email"><span class="status-dot status-unread"></span> Email</span></td>
+                  <td class="text-white">The Wilsons</td>
+                  <td>Question: Earnest money receipt for 123 Maple St</td>
+                  <td><span class="text-emerald-400">Unread</span></td>
+                  <td><a href="#" class="text-emerald-400 hover:underline">Respond</a></td>
+                </tr>
+                <tr data-source="email">
+                  <td class="text-gray-300">2:18 PM</td>
+                  <td><span class="badge badge-email"><span class="status-dot status-read"></span> Email</span></td>
+                  <td class="text-white">Title Co</td>
+                  <td>Disclosures received — 123 Maple St</td>
+                  <td><span class="text-gray-400">Read</span></td>
+                  <td><a href="#" class="text-emerald-400 hover:underline">Open</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById('openSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      if (openBtn) openBtn.addEventListener('click', ()=>{ sidebar.classList.remove('hidden'); overlay.classList.add('show'); });
+      if (overlay) overlay.addEventListener('click', ()=>{ sidebar.classList.add('hidden'); overlay.classList.remove('show'); });
+
+      // Simple filter/search for the messages table
+      (function(){
+        const rows = Array.from(document.querySelectorAll('#messageRows tr'));
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const search = document.getElementById('search');
+        let filter = 'all';
+
+        function apply() {
+          const q = (search?.value || '').toLowerCase();
+          rows.forEach(r => {
+            const source = r.getAttribute('data-source');
+            const text = r.innerText.toLowerCase();
+            const passFilter = filter === 'all' || source === filter;
+            const passSearch = !q || text.includes(q);
+            r.style.display = (passFilter && passSearch) ? '' : 'none';
+          });
+        }
+        filterButtons.forEach(b => b.addEventListener('click', () => {
+          filter = b.getAttribute('data-filter');
+          apply();
+        }));
+        if (search) search.addEventListener('input', apply);
+      })();
+    </script>
+  </body>
+  </html>

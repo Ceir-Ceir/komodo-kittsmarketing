@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komodo • Content AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif} html{background:#111827}</style>
+  </head>
+  <body class="bg-gray-900 text-gray-400 min-h-screen">
+    <div class="md:hidden fixed inset-x-0 top-0 z-50 bg-gray-900 border-b border-gray-700 h-14 flex items-center justify-between px-4">
+      <div class="flex items-center gap-2">
+        <button id="openSidebar" class="p-2 rounded-md hover:bg-gray-800" aria-label="Open Menu">
+          <svg class="h-6 w-6 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <span class="text-white font-bold">Komodo</span>
+      </div>
+      
+    </div>
+    <div id="sidebarOverlay" class="overlay md:hidden"></div>
+    <aside id="sidebar" class="sidebar fixed inset-y-0 left-0 z-40 hidden md:flex md:flex-col bg-gray-900 border-r border-gray-700">
+      <div class="flex items-center gap-2 px-4 h-16 border-b border-gray-700">
+        <svg width="26" height="26" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="36" height="36" rx="9" fill="#10B981" opacity="0.2"/>
+          <path d="M14 30 L24 12 L34 30" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 28 H31" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="text-white font-extrabold text-lg">Komodo</span>
+      </div>
+      <nav class="flex-1 px-3 py-4 space-y-1">
+        <a href="index.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="messages.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 01-4 4H8l-5 5V5a4 4 0 014-4h10a4 4 0 014 4v10z"/></svg>
+          <span>Messages</span>
+        </a>
+        <a href="crm.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h7v10H3zM14 7h7v5h-7zM14 14h7v3h-7z"/></svg>
+          <span>CRM Pipeline</span>
+        </a>
+        <a href="transactions.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>Transactions</span>
+        </a>
+        <a href="documents.html" class="nav-item flex items-center gap-3 px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v6h6"/></svg>
+          <span>Documents</span>
+        </a>
+        <a href="content.html" class="nav-item active flex items-center gap-3 px-3 py-2 rounded-md hover:text-white hover:bg-gray-800">
+          <svg class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
+          <span>Content AI</span>
+        </a>
+      </nav>
+      <div class="mt-auto px-4 py-4 border-t border-gray-700">
+        <div class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">JA</div>
+          <div>
+            <div class="text-white font-medium leading-tight">Jessica Albright</div>
+            <div class="text-gray-400 text-xs">REALTOR</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="md:pl-[260px] pt-14 md:pt-0">
+      <header class="hidden md:flex items-center justify-between h-16 px-6 border-b border-gray-700">
+        <h1 class="text-white font-semibold">Content AI</h1>
+        <div></div>
+      </header>
+      <main class="p-4 sm:p-6 lg:p-8 space-y-8">
+        <!-- Section 1: Content Generator -->
+        <section class="card p-5">
+          <div class="flex items-center justify-between">
+            <h2 class="text-white font-semibold">Content Generator</h2>
+            <span class="text-xs text-gray-400">Instagram • Facebook • Email</span>
+          </div>
+          <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div class="lg:col-span-2">
+              <textarea class="w-full h-40 bg-gray-800 border border-gray-700 rounded-md p-3 text-white placeholder-gray-500" placeholder="Enter a topic or property address..."></textarea>
+              <div class="mt-3 flex gap-2">
+                <button class="btn btn-primary px-4 py-2">Generate Content</button>
+                <button class="btn btn-outline px-3 py-2">Save Draft</button>
+              </div>
+            </div>
+            <div class="lg:col-span-1">
+              <div class="border border-gray-700 rounded-lg p-4 bg-gray-800">
+                <div class="text-xs text-gray-400">Style</div>
+                <div class="mt-2 flex gap-2 flex-wrap">
+                  <span class="px-2 py-1 rounded bg-gray-900 border border-gray-700 text-xs text-white">Instagram Post</span>
+                  <span class="px-2 py-1 rounded bg-gray-900 border border-gray-700 text-xs text-white">Listing Description</span>
+                  <span class="px-2 py-1 rounded bg-gray-900 border border-gray-700 text-xs text-white">Email</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Example output -->
+          <div class="mt-6 border border-gray-700 rounded-lg p-4 bg-gray-800">
+            <div class="text-xs text-gray-400">Example Output</div>
+            <div class="mt-2 text-white font-semibold">Open House: 123 Maple Street — This Saturday</div>
+            <div class="mt-2 text-gray-300 text-sm leading-6">
+              Step inside this beautifully updated 3BR/2BA in the heart of Wilmington. Natural light, hardwood floors, and a chef’s kitchen make it an entertainer’s dream. Private backyard oasis with deck and mature trees. Minutes to cafes and parks.<br/>
+              <br/>
+              • Price: $485,000<br/>
+              • Open House: Sat 10 AM–1 PM<br/>
+              • DM “MAPLE” for the feature sheet + tour times<br/>
+              <br/>
+              #WilmingtonDE #OpenHouse #JustListed #Realtor #KomodoOS
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Komodo AI Chatbot -->
+        <section class="card p-5">
+          <div class="flex items-center justify-between">
+            <h2 class="text-white font-semibold">Komodo AI Assistant</h2>
+            <span class="text-xs text-gray-400">Ask anything about your business</span>
+          </div>
+          <div class="mt-4 space-y-3">
+            <div class="flex gap-3 items-start">
+              <div class="h-8 w-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">J</div>
+              <div class="bubble bubble-ai bg-gray-800 text-white">Who is my latest lead?</div>
+            </div>
+            <div class="flex gap-3 items-start justify-end">
+              <div class="bubble bubble-me">New lead: Sarah Jenkins (302‑555‑0148) via Instagram. Added to New Lead with auto‑response sent and showing options for Saturday.</div>
+              <div class="h-8 w-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">K</div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="h-8 w-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">J</div>
+              <div class="bubble bubble-ai bg-gray-800 text-white">What are my deadlines for the Wilson deal?</div>
+            </div>
+            <div class="flex gap-3 items-start justify-end">
+              <div class="bubble bubble-me">Wilsons @ 123 Maple St — Earnest Money due Sep 02; Inspection contingency TOMORROW; Appraisal Sep 06; Closing Sep 12. I can create reminders or email updates to the client.</div>
+              <div class="h-8 w-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">K</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById('openSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      if (openBtn) openBtn.addEventListener('click', ()=>{ sidebar.classList.remove('hidden'); overlay.classList.add('show'); });
+      if (overlay) overlay.addEventListener('click', ()=>{ sidebar.classList.add('hidden'); overlay.classList.remove('show'); });
+    </script>
+  </body>
+  </html>
